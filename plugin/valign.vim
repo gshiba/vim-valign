@@ -113,9 +113,6 @@ function! valign#Match(top, bottom, left, right, ptrn) abort
         let s = getline(a:top + i)
         let j = match(s[a:left-1 : a:right-1], a:ptrn)
         call add(ixs, (j == -1 ? -1 : j + 1))
-        " echom "Search for '" . ptrn . "' in:"
-        " echom "'" . s "."
-        " echom "'" . s[left-1:right-1] . "."
     endfor
     return ixs
 endfunction
@@ -141,7 +138,6 @@ function! valign#Align() abort
             let left_pad = most_right - mo
             let right_pad = mo - most_left
         endif
-        echom "i=".i." ".left_pad." ".right_pad
         let s = getline(line_num)
         let replacement = [
                     \ (left == 1 ? "" : s[:left - 2]),
