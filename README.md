@@ -2,7 +2,7 @@
 
 Example mapping:
 
-    let g:Foo_PadChar = "-"
+    let g:Valign_PadChar = "-"
     vnoremap gi <esc>:call foo#Align()<CR>
 
 
@@ -14,7 +14,7 @@ Before:
     ... GACTTGCGACGTACGTAGCACGATCGATGC  ...
 
 
-Search for a common "anchor" sequence with `/\vGC..CG`.
+Search for a common "anchor" sequence, for example, `/\vGC..CG`.
 
 Then, block-select the sequences with `<C-V>`. For example, place the cursor at the top left "C". Then, `v` `i` `w` `CTRL-v` `j` `j` `j`
 
@@ -32,5 +32,15 @@ After:
 
 Testing uses the `vim-vspec` framework.
 
-    git clone vim-vspec
-    git clone vim-valign
+    # Clone vim-vspec
+    git clone git@github.com:kana/vim-vspec.git
+    cd vim-vspect
+    git checkout master  # make sure you're on master
+    cd ..
+
+    # Clone vim-valign
+    git clone git@github.com:gshiba/vim-valign.git
+    cd vim_valign
+
+    # Run tests
+    ../vim-vspec/bin/prove-vspec -d .
