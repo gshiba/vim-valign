@@ -1,9 +1,9 @@
 # valign
 
-Example mapping:
+Example mapping in your `.vimrc`:
 
     let g:Valign_PadChar = "-"
-    vnoremap gi <esc>:call foo#Align()<CR>
+    vnoremap gi <esc>:call valign#Align()<CR>
 
 
 Before:
